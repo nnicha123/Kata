@@ -12,8 +12,8 @@ class Birthday extends Component {
     }
     submitted = (e) => {
         e.preventDefault();
-        console.log(this.state.month + this.state.day)
-        axios.get('http://localhost:8000/information/' + this.state.month + this.state.day).then(res => {
+       
+         axios.get('http://localhost:8000/information/' + this.state.month + this.state.day).then(res => {
             if (res.data) this.setState({ birthdayPerson: res.data, find: true,noInfo:false })
             else this.setState({noInfo:true,find:false})
         })
@@ -24,11 +24,11 @@ class Birthday extends Component {
                 <form onSubmit={(e) => this.submitted(e)}>
                     <div className="form-group">
                         <label>Month :</label>
-                        <input type="text" value={this.state.month} onChange={e => this.setState({ month: e.target.value })} />
+                        <input type="text" value={this.state.month} onChange={e => this.setState({ month: e.target.value })} placeholder="e.g. 07"/>
                     </div>
                     <div className="form-group">
                         <label>Day :</label>
-                        <input type="text" value={this.state.day} onChange={e => this.setState({ day: e.target.value })} />
+                        <input type="text" value={this.state.day} onChange={e => this.setState({ day: e.target.value })} placeholder="e.g. 18"/>
                     </div>
                     <button type="submit">Find Birthday Person</button>
                 </form>
