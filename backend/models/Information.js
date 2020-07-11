@@ -11,6 +11,9 @@ module.exports = (sequelize,DataTypes) => {
         },
         email:{
             type:DataTypes.STRING(255)
+        },
+        date_no_year:{
+            type:DataTypes.STRING(255)
         }
     },{
         tableName:'informations',
