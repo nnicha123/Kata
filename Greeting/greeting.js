@@ -1,6 +1,6 @@
-const { argv } = require("process")
 
-greet = (name) => {
+function greet(name) {
+    if(arguments[0])console.log(arguments[0].length)
     if (!name) return 'Hello, my friend.'
     else if (name.length == 1) {
         if (name.toUpperCase() === name) return `HELLO, ${name}!`
